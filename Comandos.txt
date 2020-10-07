@@ -1,0 +1,44 @@
+-Executar no prompt dentro da pasta desejada para criar o projeto
+	yarn init -y (iniciar package.json)
+-Executar dentro do vscode
+	yarn add express
+	npm install @types/express -D
+	yarn add typescript -D
+	yarn tsc --init(gera o tsconfig.json) Obs.
+											Em tsconfig.json alterar o ouDir para  "outDir": "./dist",
+											e o rootDir para "rootDir": "./src",
+	yarn tsc
+	yarn add ts-node-dev -D (reinicia quando tem alterações) (configurar os scripts de execução)
+		  "scripts": {
+			"build": "tsc",
+			"dev:server": "ts-node-dev --inspect --transpileOnly --ignore-watch node_modules src/server.ts"
+		  },
+	yarn dev:server (este é o comando que foi configurado e é utilizado para iniciar o servidor agora)
+	yarn add uuidv4
+	yarn add date-fns(biblioteca para maniputar data e hora)
+	yarn add typeorm pg (adiciona o type orm com driver do postgres)
+	yarn add reflect-metadata
+	yarn typeorm migration:create -n CreateAppointments (criar migration). Obs. alterar uma migration só é recomendado quando não foi enviada ainda para o sistema de versionamento.
+	yarn typeorm migration:run (rodar migrations)
+	yarn add bcryptjs (biblioteca de criptografia)
+	yarn add -D @types/bcryptjs
+	yarn add jsonwebtoken
+	yarn add -D @types/jsonwebtoken
+	yarn add multer (Upload de arquivos)
+	yarn add -D @types/multer
+
+
+-DOCKER
+	-Criar container do docker para o postgres Obs.(porta da maquina que acessa o docker : porta interna do docker)
+		docker run --name gostack_postgres -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
+	-Lista containers do docker
+		docker ps/docker ps -a
+	-Startar container do docker
+		docker start "ID DO CONTAINER QUE QUER STARTAR"
+
+-TypeORM
+	-Criar arquivo ormconfig.json na raiz do projeto e fazer as configurações dentro dele
+
+
+Obs:
+  -para saber se o método precisa de async deve colocar o mouse encima e ver o retorno dele.
