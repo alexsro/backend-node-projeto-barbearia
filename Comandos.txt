@@ -42,3 +42,7 @@
 
 Obs:
   -para saber se o método precisa de async deve colocar o mouse encima e ver o retorno dele.
+  
+Conceitos utilizados: 
+	-Entity/Models Obs(Usadas para definir formatos de dados, geralmente substituindo as interfaces).
+	-Repository Obs(conexão entre a persistencia(Banco/Variaval) e outras partes do código) Obs2(Geralmente se tem um repositorio para cada Entity/Models).
