@@ -1,2 +1,2 @@
-# primeiro-projeto-node
-Projeto baseado no botcamp rocketseat
+# Projeto barbearia	
+Projeto baseado no bootcamp da rocketseat 
