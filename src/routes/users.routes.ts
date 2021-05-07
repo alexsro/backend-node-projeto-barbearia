@@ -16,8 +16,6 @@ usersRouter.post('/', async (request, response) => {
       password,
     });
 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
     delete user.password;
 
     return response.send({ user });
