@@ -26,6 +26,7 @@
 	yarn add -D @types/jsonwebtoken
 	yarn add multer (Upload de arquivos)
 	yarn add -D @types/multer
+	yarn add express-async-errors "Corrigir problema de recuperar erro de rotas asincronas";
 
 
 -DOCKER
