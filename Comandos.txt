@@ -27,7 +27,9 @@
 	yarn add multer (Upload de arquivos)
 	yarn add -D @types/multer
 	yarn add express-async-errors "Corrigir problema de recuperar erro de rotas asincronas";
-
+  yarn add cors //evita que sites não confiáveis possam acessar a api
+  yarn add tsconfig-paths -D // Permite que a execução entenda a estrutura de pastas criadas a partir de paths do tsconfig.json
+  yarn add tsyringe //Lib para aplicar injeção de dependencia
 
 -DOCKER
 	-Criar container do docker para o postgres Obs.(porta da maquina que acessa o docker : porta interna do docker)
@@ -43,7 +45,7 @@
 
 Obs:
   -para saber se o método precisa de async deve colocar o mouse encima e ver o retorno dele.
-  
-Conceitos utilizados: 
+
+Conceitos utilizados:
 	-Entity/Models Obs(Usadas para definir formatos de dados, geralmente substituindo as interfaces).
 	-Repository Obs(conexão entre a persistencia(Banco/Variaval) e outras partes do código) Obs2(Geralmente se tem um repositorio para cada Entity/Models).
