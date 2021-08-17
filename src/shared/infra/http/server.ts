@@ -1,7 +1,9 @@
 import 'reflect-metadata';
+import 'dotenv/config';
+
 import express from 'express';
 import cors from 'cors';
-import 'express-async-errors';
+import { errors } from 'celebrate';
 import uploadConfig from 'config/upload';
 import globalExceptionHandler from 'modules/users/infra/http/middlewares/globalExceptionHandler';
 import routes from './routes';
@@ -15,6 +17,7 @@ app.use(cors());
 app.use(express.json());
 app.use('/files', express.static(uploadConfig.uploadsFolder));
 app.use(routes);
+app.use(errors());
 app.use(globalExceptionHandler);
 
 app.listen(3333, () => {

@@ -2,8 +2,9 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-     "outDir": "./dist",
-     "rootDir": "./src",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "allowJs": true,
     "typeRoots": [
       "./src/@types",
       "./node_modules/@types"

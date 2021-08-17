@@ -5,15 +5,14 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import uploadConfig from '@config/upload';
 
-import Appointment from 'modules/appointments/infra/typeorm/entities/Appointment';
+import { Exclude, Expose } from 'class-transformer';
 
 @Entity('users')
 class User {
   @PrimaryGeneratedColumn('uuid')
   id: string;
-
-  appointment: Appointment;
 
   @Column()
   name: string;
@@ -22,9 +21,11 @@ class User {
   email: string;
 
   @Column()
+  @Exclude()
   password: string;
 
   @Column()
+  @Exclude()
   avatar: string;
 
   @CreateDateColumn()
@@ -32,6 +33,22 @@ class User {
 
   @UpdateDateColumn()
   updated_at: Date;
+
+  @Expose({ name: 'avatar_url' })
+  getAvatarUrl(): string | null {
+    if (!this.avatar) {
+      return null;
+    }
+
+    switch (uploadConfig.driver) {
+      case 'disk':
+        return `${process.env.APP_API_URL}/files/${this.avatar}`;
+      case 's3':
+        return `https://${uploadConfig.config.aws.bucket}.s3.us-east-1.amazonaws.com/${this.avatar}`;
+      default:
+        return null;
+    }
+  }
 }
 
 export default User;
