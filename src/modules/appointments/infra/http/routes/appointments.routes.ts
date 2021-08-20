@@ -14,17 +14,12 @@ appointmentsRouter.post(
   '/',
   celebrate({
     [Segments.BODY]: {
-      provider_id: Joi.string().uuid().required,
+      provider_id: Joi.string().uuid().required(),
       date: Joi.date(),
     },
   }),
   appointmentsController.create,
 );
 appointmentsRouter.get('/me', providerApppointmentsController.index);
-// appointmentsRouter.get('/', async (request, response) => {
-//   const appointments = await appointmentsRepository.find();
-
-//   return response.json(appointments);
-// });
 
 export default appointmentsRouter;
