@@ -1,1 +1,5 @@
-*.html linguist-detectable=false
+* linguist-vendored
+*.js linguist-vendored
+*.ts linguist-vendored
+*.tsx linguist-vendored
+*.css linguist-vendored
